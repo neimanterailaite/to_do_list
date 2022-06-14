@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.todo-container,
+.progress-container,
+.done-container {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    flex-direction: column;
+    outline: 2px solid black;
+}
+
+
+
+.todo-head,
+.progress-head,
+.done-head {
+    height: 10%;
+    width: 100%;
+    background-color:brown;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1rem;
+    
+}
+
+.todo-body,
+.progress-body,
+.done-body {
+    height: 100%;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    overflow: scroll;
+}
+
+.task {
+    min-height: 15%;
+    width: 100%;
+    outline: 2px solid black;
+    margin-bottom: 1rem;
+}
+
+.task-head {
+    height: 65%;
+    width: 100%;
+    background-color:lightblue;
+    max-height: 100%;
+
+}
+
+.task-body {
+    height: 35%;
+    width: 100%;
+    background-color: lightgreen;
+    display: flex;
+    align-items: stretch;
+    justify-content: end;
+    gap: 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#addTask {
+    all: unset;
+    font-size: 2rem;
+    font-weight: 1000;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    margin-left: auto;
+}
+
