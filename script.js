@@ -18,19 +18,7 @@ const newTask = `
 addTask.addEventListener("click", ()=> {
 
     todoBody.innerHTML+=newTask;
-<<<<<<< HEAD
-    todoBody.insertAdjacentElement("afterbegin", "p")
-});
 
-
-console.log(newTask)
-const startbutton = document.querySelector("#task-start");
-
-const starttask = startbutton.addEventListener("click", () => {
-    document.querySelector('.progress-body').appendChild(document.querySelector(newTask))
-
-})
-=======
     // todoBody.insertAdjacentElement("afterbegin", "p")
     const deleteTask = document.querySelectorAll("#task-delete");
     const startTask = document.querySelectorAll("#task-start");
@@ -50,4 +38,3 @@ const starttask = startbutton.addEventListener("click", () => {
 })
 
 
->>>>>>> 31c087be053cfa47bcd403391fb69ede72a611f1
