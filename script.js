@@ -1,5 +1,7 @@
 const todoBody = document.querySelector(".todo-body");
+const progressBody = document.querySelector(".progress-body");
 const addTask = document.querySelector("#addTask");
+
 
 const newTask = `
 <div class="task">
@@ -18,10 +20,17 @@ addTask.addEventListener("click", ()=> {
     todoBody.innerHTML+=newTask;
     // todoBody.insertAdjacentElement("afterbegin", "p")
     const deleteTask = document.querySelectorAll("#task-delete");
+    const startTask = document.querySelectorAll("#task-start");
     
     deleteTask.forEach(e => {
-        e.addEventListener("click", (e)=>{
-            e.target.closest(".task").remove();
+        e.addEventListener("click", e=>{
+           return e.target.closest(".task").remove();
+        })
+    })
+
+    startTask.forEach(e => {
+        e.addEventListener("click", e => {
+            progressBody.append(e.target.closest(".task"));
         })
     })
 
