@@ -25,8 +25,7 @@ addTask.addEventListener("click", ()=> {
         })
     })
 
-
-});
+})
 
 
 console.log(newTask)
