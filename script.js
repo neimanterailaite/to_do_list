@@ -25,7 +25,6 @@ addTask.addEventListener("click", ()=> {
         })
     })
 
-
-});
+})
 
 
