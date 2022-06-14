@@ -29,3 +29,10 @@ addTask.addEventListener("click", ()=> {
 });
 
 
+console.log(newTask)
+const startbutton = document.querySelector("#task-start");
+
+const starttask = startbutton.addEventListener("click", () => {
+    document.querySelector('.progress-body').appendChild(document.querySelector(newTask))
+
+})
