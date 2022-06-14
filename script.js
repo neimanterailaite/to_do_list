@@ -8,7 +8,7 @@ const newTask = `
     </div>
     <div class="task-body">
         <button id="task-start">start</button>
-        <button id="task-change">change</button>
+        <button id="task-delete">delete</button>
         <button id="task-details">details</button>
     </div>
 </div>`;
@@ -16,5 +16,16 @@ const newTask = `
 addTask.addEventListener("click", ()=> {
 
     todoBody.innerHTML+=newTask;
-    todoBody.insertAdjacentElement("afterbegin", "p")
+    // todoBody.insertAdjacentElement("afterbegin", "p")
+    const deleteTask = document.querySelectorAll("#task-delete");
+    
+    deleteTask.forEach(e => {
+        e.addEventListener("click", (e)=>{
+            e.target.closest(".task").remove();
+        })
+    })
+
+
 });
+
+
