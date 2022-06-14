@@ -18,3 +18,12 @@ addTask.addEventListener("click", ()=> {
     todoBody.innerHTML+=newTask;
     todoBody.insertAdjacentElement("afterbegin", "p")
 });
+
+
+console.log(newTask)
+const startbutton = document.querySelector("#task-start");
+
+const starttask = startbutton.addEventListener("click", () => {
+    document.querySelector('.progress-body').appendChild(document.querySelector(newTask))
+
+})
