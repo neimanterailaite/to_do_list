@@ -112,9 +112,10 @@ body {
     outline: 2px solid black;
     color: black;
     background-color: lightgrey;
+    padding: 0.2rem;
 
 }
 
 ::placeholder {
-    color: ;
+    color: lightslategray;
 }
