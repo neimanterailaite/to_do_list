@@ -22,17 +22,14 @@ function createNewTask(){
 
         const startButton = document.createElement("button");
         const deleteButton = document.createElement("button");
-        const detailsButton = document.createElement("button");
 
         startButton.textContent="start";
         deleteButton.textContent="delete";
-        detailsButton.textContent="details";
 
         startButton.addEventListener("click", startTask);
         deleteButton.addEventListener("click", deleteTask);
-        detailsButton.addEventListener("click", showDetails);
 
-        newTaskBody.append(startButton,deleteButton,detailsButton);
+        newTaskBody.append(startButton,deleteButton);
 
         newTask.append(newTaskHead, newTaskBody);
 
@@ -62,15 +59,3 @@ function deleteTask(e) {
     const deleteTask = e.target;
     return deleteTask.closest(".task").remove();
 }
-
-function showDetails(e) {
-    //bootstrap modal with possibility to change the name of the task and to write some additional information in a textarea
-}
-
-
-
-
-
-
-
-// inpout[name="input"]
