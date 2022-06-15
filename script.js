@@ -9,22 +9,26 @@ const inputTaskName= document.querySelector("#newTaskName")
 <div class="task">
         <div class="task-head"></div>
         <div class="task-body">
-            <button id="task-start">start</button>
-            <button id="task-delete">delete</button>
-            <button id="task-details">details</button>
+            <button class="task-start">start</button>
+            <button class="task-delete">delete</button>
+            <button class="task-details">details</button>
         </div>
 </div>
  */
 
+addTaskButton.addEventListener("click", createNewTask);
+startButton.addEventListener("click", startTask);
+
 function createNewTask(){
 
     if(inputTaskName.value){
-        
         const newTask = document.createElement("div");
         newTask.classList.add("task");
 
         const newTaskHead = document.createElement("div");
         newTaskHead.classList.add("task-head");
+        newTaskHead.textContent=inputTaskName.value;
+        inputTaskName.value="";
 
         const newTaskBody = document.createElement("div");
         newTaskBody.classList.add("task-body")
@@ -41,21 +45,30 @@ function createNewTask(){
         deleteButton.classList.add("task-delete");
         detailsButton.classList.add("task-details");
 
+        startButton.addEventListener("click", startTask);
+        deleteButton.addEventListener("click", deleteTask);
+        detailsButton.addEventListener("click", showDetails);
+
         newTaskBody.append(startButton,deleteButton,detailsButton);
 
         newTask.append(newTaskHead, newTaskBody);
         todoBody.append(newTask);
         return;
-
     }
-    return alert("You need to input a name!")
 
-
-
+    return alert("You need to input a task name!")
 }
 
 function startTask(e) {
-//create done button and delete the start button with remove child function
+    const inProgressTask = e.target;
+    inProgressTask.textContent="done";
+    inProgressTask.className="done-button";
+    inProgressTask.removeEventListener("click", startTask);
+    return progressBody.append(inProgressTask.closest(".task"));
+}
+
+function deleteTask() {
+    
 }
 
 function doneTask(e) {
@@ -63,13 +76,9 @@ function doneTask(e) {
     
 }
 
-
-
-
-addTaskButton.addEventListener("click", createNewTask);
-
-
-
+function showDetails(e) {
+    //bootstrap modal with possibility to change the name of the task and to write some additional information in a textarea
+}
 
 
 
@@ -77,30 +86,7 @@ addTaskButton.addEventListener("click", createNewTask);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// inpout[name="input"]
 
 
 
