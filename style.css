@@ -39,11 +39,12 @@ body {
 .todo-head,
 .progress-head,
 .done-head {
-    height: 10%;
+    min-height: 10%;
     width: 100%;
     background-color:brown;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem;
     font-size: 1rem;
     
@@ -76,7 +77,6 @@ body {
     font-size: 1rem;
     padding: 0.2rem;
     font-weight: 600;
-    border
 }
 
 .task-head {
@@ -96,19 +96,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #addTask {
     all: unset;
     font-size: 2rem;
@@ -116,8 +103,18 @@ body {
     background-color: lightgreen;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 3rem;
-    margin-left: auto;
+    cursor: pointer;
 }
 
+#newTaskName {
+    all: unset;
+    outline: 2px solid black;
+    color: black;
+    background-color: lightgrey;
+
+}
+
+::placeholder {
+    color: ;
+}
