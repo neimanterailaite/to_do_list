@@ -4,20 +4,7 @@ const doneBody = document.querySelector(".done-body");
 const addTaskButton = document.querySelector("#addTask");
 const inputTaskName= document.querySelector("#newTaskName")
 
-
-/* 
-<div class="task">
-        <div class="task-head"></div>
-        <div class="task-body">
-            <button class="task-start">start</button>
-            <button class="task-delete">delete</button>
-            <button class="task-details">details</button>
-        </div>
-</div>
- */
-
 addTaskButton.addEventListener("click", createNewTask);
-startButton.addEventListener("click", startTask);
 
 function createNewTask(){
 
@@ -41,10 +28,6 @@ function createNewTask(){
         deleteButton.textContent="delete";
         detailsButton.textContent="details";
 
-        startButton.classList.add("task-start");
-        deleteButton.classList.add("task-delete");
-        detailsButton.classList.add("task-details");
-
         startButton.addEventListener("click", startTask);
         deleteButton.addEventListener("click", deleteTask);
         detailsButton.addEventListener("click", showDetails);
@@ -52,28 +35,32 @@ function createNewTask(){
         newTaskBody.append(startButton,deleteButton,detailsButton);
 
         newTask.append(newTaskHead, newTaskBody);
-        todoBody.append(newTask);
-        return;
+
+        return todoBody.append(newTask);
     }
 
     return alert("You need to input a task name!")
 }
 
 function startTask(e) {
-    const inProgressTask = e.target;
-    inProgressTask.textContent="done";
-    inProgressTask.className="done-button";
-    inProgressTask.removeEventListener("click", startTask);
-    return progressBody.append(inProgressTask.closest(".task"));
-}
+    const doneButton = document.createElement("button");
+    doneButton.textContent="done";
+    doneButton.addEventListener("click", doneTask);
 
-function deleteTask() {
-    
+    const inProgressTask = e.target;
+    progressBody.append(inProgressTask.closest(".task"));
+    return inProgressTask.closest(".task-body").replaceChild(doneButton, inProgressTask);
 }
 
 function doneTask(e) {
-    //only has delete and details button
-    
+    const doneTask = e.target;
+    doneBody.append(doneTask.closest(".task"));
+    return doneTask.remove();
+}
+
+function deleteTask(e) {
+    const deleteTask = e.target;
+    return deleteTask.closest(".task").remove();
 }
 
 function showDetails(e) {
@@ -87,32 +74,3 @@ function showDetails(e) {
 
 
 // inpout[name="input"]
-
-
-
-
-// addTask.addEventListener("click", ()=> {
-
-//     todoBody.innerHTML+=newTask;
-//     // todoBody.insertAdjacentElement("afterbegin", "p")
-//     const deleteTask = document.querySelectorAll("#task-delete");
-//     const startTask = document.querySelectorAll("#task-start");
-    
-//     deleteTask.forEach(e => {
-//         e.addEventListener("click", e=>{
-//            return e.target.closest(".task").remove();
-//         })
-//     })
-
-//     startTask.forEach(e => {
-//         e.addEventListener("click", e => {
-//             progressBody.append(e.target.closest(".task"));
-//         })
-//     })
-
-// })
-
-
-
-
-
