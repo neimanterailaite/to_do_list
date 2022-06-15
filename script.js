@@ -1,6 +1,9 @@
 const todoBody = document.querySelector(".todo-body");
 const progressBody = document.querySelector(".progress-body");
 const addTask = document.querySelector("#addTask");
+const taskBody = document.querySelector(".task-body");
+const doneButton = document.createElement("button");
+doneButton.innerText="Done";
 
 
 const newTask = `
@@ -35,5 +38,8 @@ addTask.addEventListener("click", ()=> {
     })
 
 })
+
+
+
 
 
