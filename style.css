@@ -84,6 +84,7 @@ body {
 
 .task button:last-child {
     background-color: #d7415d;
+    margin-left: auto;
 }
 .task-head {
     height: 65%;
@@ -100,7 +101,6 @@ body {
     width: 100%;
     display: flex;
     align-items: stretch;
-    justify-content: end;
 }
 
 
@@ -124,6 +124,6 @@ body {
 
 }
 
-::placeholder {
+*::placeholder {
     color: lightslategray;
 }
