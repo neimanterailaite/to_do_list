@@ -1,22 +1,24 @@
 const todoBody = document.querySelector(".todo-body");
 const progressBody = document.querySelector(".progress-body");
+const doneBody = document.querySelector(".done-body");
 const addTask = document.querySelector("#addTask");
 const taskBody = document.querySelector(".task-body");
-const doneButton = document.createElement("button");
-doneButton.innerText="Done";
 
 
-const newTask = `
-<div class="task">
-    <div class="task-head">
-        <div class="task-name"></div>
-    </div>
-    <div class="task-body">
-        <button id="task-start">start</button>
-        <button id="task-delete">delete</button>
-        <button id="task-details">details</button>
-    </div>
-</div>`;
+
+// const newTask = `
+// <div class="task">
+//     <div class="task-head">
+//         <div class="task-name"></div>
+//     </div>
+//     <div class="task-body">
+//         <button id="task-start">start</button>
+//         <button id="task-delete">delete</button>
+//         <button id="task-details">details</button>
+//     </div>
+// </div>`;
+
+
 
 addTask.addEventListener("click", ()=> {
 
