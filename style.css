@@ -39,11 +39,12 @@ body {
 .todo-head,
 .progress-head,
 .done-head {
-    height: 10%;
+    min-height: 10%;
     width: 100%;
     background-color:brown;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem;
     font-size: 1rem;
     
@@ -54,7 +55,7 @@ body {
 .done-body {
     height: 100%;
     width: 100%;
-    background-color: bisque;
+    background-color: #ffc9a5;
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
@@ -67,22 +68,31 @@ body {
     width: 100%;
     outline: 2px solid black;
     margin-bottom: 1rem;
-    padding: 0.2rem;
+    background-color: #2095f2;
 }
 
 .task button {
     all: unset;
-    background-color: aqua;
     font-size: 1rem;
     padding: 0.2rem;
-    font-weight: 600;
-    border
+    font-weight: 1000;
 }
 
+.task button:first-child {
+    background-color: #ffd960;
+}
+
+.task button:last-child {
+    background-color: #d7415d;
+    margin-left: auto;
+}
 .task-head {
     height: 65%;
     width: 100%;
     max-height: 100%;
+    color: white;
+    font-weight: 1000;
+    font-size: 1.5rem;
 
 }
 
@@ -91,22 +101,7 @@ body {
     width: 100%;
     display: flex;
     align-items: stretch;
-    justify-content: end;
-    gap: 0.5rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #addTask {
@@ -116,8 +111,19 @@ body {
     background-color: lightgreen;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 3rem;
-    margin-left: auto;
+    cursor: pointer;
 }
 
+#newTaskName {
+    all: unset;
+    outline: 2px solid black;
+    color: black;
+    background-color: lightgrey;
+    padding: 0.2rem;
+
+}
+
+*::placeholder {
+    color: lightslategray;
+}
