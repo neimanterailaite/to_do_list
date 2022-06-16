@@ -13,7 +13,7 @@ function createNewTask() {
     newTask.classList.add("task");
 
     const newTaskHead = document.createElement("div");
-    const newTaskInputField = document.createElement("input");
+    const newTaskInputField = document.createElement("textarea");
     newTaskHead.classList.add("task-head");
     newTaskInputField.value = inputTaskName.value;
     newTaskInputField.classList.add("input");
@@ -62,11 +62,13 @@ function startTask(e) {
 function editTask(e) {
   const editTask = e.target.closest(".task");
   editTask.firstChild.firstChild.disabled = false;
-  editTask.firstChild.firstChild.addEventListener("keypress", e => {
-    if (e.key === "Enter") {
-      editTask.firstChild.firstChild.disabled = "true";
-    }
-  });
+  if ((editTask.firstChild.firstChild.disabled = false)) {
+    //mit console.log abfangen und gucken was ausgewählt wird
+    e.target.removeEventListener("click", editTask);
+    e.target.addEventListener("click", () => {
+      editTask.firstChild.firstChild.disabled = true;
+    });
+  }
 }
 
 function doneTask(e) {
