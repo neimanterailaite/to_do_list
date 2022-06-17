@@ -16,6 +16,10 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
+textarea {
+  resize: none;
+}
+
 .main-container {
   width: 1200px;
   height: 800px;
@@ -76,12 +80,17 @@ body {
 
 .task button:first-child {
   background-color: #ffd960;
+  margin-left: auto;
+}
+
+.task button:nth-child(2) {
+  background-color: #d7415d;
 }
 
 .task button:last-child {
-  background-color: #d7415d;
-  margin-left: auto;
+  background-color: #b1d741;
 }
+
 .task-head {
   height: 65%;
   width: 100%;
