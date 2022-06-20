@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css" />
-        <title>To-Do List</title>
-    </head>
-    <body>
-        <h1>To-Do List</h1>
-        <script type="text/javascript" src="./script.js"></ script>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="todo-container">
+        <div class="todo-head">
+          <h2>ToD</h2>
+          <input type="text" id="newTaskName" placeholder="Add new Task name" />
+          <button id="addTask">+</button>
+        </div>
+        <div class="todo-body"></div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-head">
+          <h2>In Progress</h2>
+        </div>
+        <div class="progress-body"></div>
+      </div>
+
+      <div class="done-container">
+        <div class="done-head">
+          <h2>Done</h2>
+        </div>
+        <div class="done-body"></div>
+      </div>
+    </div>
+  </body>
 </html>
