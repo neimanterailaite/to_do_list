@@ -5,7 +5,16 @@ const doneBody = document.querySelector(".done-body");
 const addTaskButton = document.querySelector("#addTask");
 const inputTaskName = document.querySelector("#newTaskName");
 
-addTaskButton.addEventListener("click", createNewTask);
+class Task {
+  constructor(status = 0) {
+    this._name = inputTaskName;
+    this._status = status;
+  }
+}
+
+addTaskButton.addEventListener("click", () => {
+  const newTask = new Task();
+});
 
 function createNewTask() {
   if (inputTaskName.value) {
