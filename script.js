@@ -42,7 +42,9 @@ function createNewTask() {
 
     newTask.append(newTaskHead, newTaskBody);
 
-    return todoBody.append(newTask);
+    todoBody.append(newTask);
+
+    return;
   }
 
   return alert("You need to input a task name!");
