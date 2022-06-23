@@ -8,10 +8,9 @@ const todoStorageArray = JSON.parse(localStorage.getItem("todo")) || [];
 const progressStorageArray = JSON.parse(localStorage.getItem("progress")) || [];
 const doneStorageArray = JSON.parse(localStorage.getItem("done")) || [];
 
-addTaskButton.addEventListener("click", () => {
-  createNewTask();
-  localStorage.setItem("todo", JSON.stringify(createNewTask));
-});
+localStorage.setItem("todo", JSON.stringify());
+
+addTaskButton.addEventListener("click", createNewTask);
 
 function createNewTask() {
   if (inputTaskName.value) {
@@ -49,6 +48,8 @@ function createNewTask() {
     newTask.append(newTaskHead, newTaskBody);
 
     todoBody.append(newTask);
+
+    return;
   }
 
   return alert("You need to input a task name!");
