@@ -8,12 +8,24 @@ const todoStorageArray = JSON.parse(localStorage.getItem("todo")) || [];
 const progressStorageArray = JSON.parse(localStorage.getItem("progress")) || [];
 const doneStorageArray = JSON.parse(localStorage.getItem("done")) || [];
 
-localStorage.setItem("todo", JSON.stringify());
-
 addTaskButton.addEventListener("click", createNewTask);
+
+function saveAllItems() {
+  // querySelectorAll + Array.from() + .map()
+  // ["Einkaufen", "Abhwaschen"]
+  const todoItems = [];
+  localStorage.setItem("todo", JSON.stringify(todoItems));
+
+  const progressItems = [];
+  localStorage.setItem("progress", JSON.stringify(progressItems));
+
+  const doneItems = [];
+  localStorage.setItem("done", JSON.stringify(doneItems));
+}
 
 function createNewTask() {
   if (inputTaskName.value) {
+    console.log(localStorage);
     const newTask = document.createElement("div");
     newTask.classList.add("task");
 
@@ -49,6 +61,8 @@ function createNewTask() {
 
     todoBody.append(newTask);
 
+    saveAllItems();
+
     return;
   }
 
@@ -59,6 +73,8 @@ function startTask(e) {
   const doneButton = document.createElement("button");
   doneButton.textContent = "done";
   doneButton.addEventListener("click", doneTask);
+
+  saveAllItems();
 
   const inProgressTask = e.target;
   progressBody.append(inProgressTask.closest(".task"));
@@ -71,15 +87,18 @@ function editTask(e) {
   const editTask = e.target.closest(".task");
   editTask.firstChild.firstChild.disabled = !editTask.firstChild.firstChild
     .disabled;
+  saveAllItems();
 }
 
 function doneTask(e) {
   const doneTask = e.target;
   doneBody.append(doneTask.closest(".task"));
+  saveAllItems();
   return doneTask.remove();
 }
 
 function deleteTask(e) {
   const deleteTask = e.target;
+  saveAllItems();
   return deleteTask.closest(".task").remove();
 }
