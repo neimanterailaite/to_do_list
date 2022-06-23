@@ -1,12 +1,17 @@
-
-"use strict";
 const todoBody = document.querySelector(".todo-body");
 const progressBody = document.querySelector(".progress-body");
 const doneBody = document.querySelector(".done-body");
 const addTaskButton = document.querySelector("#addTask");
 const inputTaskName = document.querySelector("#newTaskName");
 
-addTaskButton.addEventListener("click", createNewTask);
+const todoStorageArray = JSON.parse(localStorage.getItem("todo")) || [];
+const progressStorageArray = JSON.parse(localStorage.getItem("progress")) || [];
+const doneStorageArray = JSON.parse(localStorage.getItem("done")) || [];
+
+addTaskButton.addEventListener("click", () => {
+  createNewTask();
+  localStorage.setItem("todo", JSON.stringify(createNewTask));
+});
 
 function createNewTask() {
   if (inputTaskName.value) {
@@ -43,7 +48,7 @@ function createNewTask() {
 
     newTask.append(newTaskHead, newTaskBody);
 
-    return todoBody.append(newTask);
+    todoBody.append(newTask);
   }
 
   return alert("You need to input a task name!");
@@ -63,8 +68,8 @@ function startTask(e) {
 
 function editTask(e) {
   const editTask = e.target.closest(".task");
-  editTask.firstChild.firstChild.disabled =
-    !editTask.firstChild.firstChild.disabled;
+  editTask.firstChild.firstChild.disabled = !editTask.firstChild.firstChild
+    .disabled;
 }
 
 function doneTask(e) {
@@ -77,4 +82,3 @@ function deleteTask(e) {
   const deleteTask = e.target;
   return deleteTask.closest(".task").remove();
 }
-
